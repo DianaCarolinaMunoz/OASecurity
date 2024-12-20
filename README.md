@@ -34,18 +34,15 @@ If npm is not installed, you can follow the steps below to install it.
 You can download and install npm from the [Node.js official website](https://nodejs.org/). The installation of npm is bundled with Node.js, so installing Node.js will also install npm.
 
 
-1.Go to Node.js download page.
-2.Download the recommended version for your operating system.
-3.Follow the installation instructions to install Node.js and npm.
+1. Go to Node.js download page.
+2. Download the recommended version for your operating system.
+3. Follow the installation instructions to install Node.js and npm.
 
 
 
-Git LFS (Large File Storage)
-This project includes large files, which are stored using Git LFS (Large File Storage). To properly clone and manage the repository, you need to have Git LFS installed.
+## Installing Git LFS (Large File Storage)
 
-Installing Git LFS
-
-To install Git LFS, follow the steps below depending on your operating system:
+In case the file tablecommits_apis_security_oas is located in the data folder, please install Git LFS, follow the steps below depending on your operating system:
 
 macOS: You can install Git LFS using Homebrew:
 
@@ -61,9 +58,12 @@ Once Git LFS is installed, you need to run the following command in the project 
 git lfs install
 ``` 
 
+### Download the file
+
+The file used in the scripts is available at: [File tablecommits_apis_security_oas](https://usi365-my.sharepoint.com/:x:/g/personal/munozc_usi_ch/EYBncyJn5QxFuPzfjuEqoKIBkacMV36fe_FKBjlcdaKCZw?e=q1Eq15). Please locate it in the repository data folder
 
 
-Install Dependencies
+###  Install Dependencies
 Once npm is installed, you can install the necessary packages globally for the project.
 
 Open your terminal or command prompt.

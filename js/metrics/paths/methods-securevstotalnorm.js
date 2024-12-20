@@ -127,7 +127,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
 
         });
 
-        const svg = d3.select("#methods-securevsnonsecure")
+        const svg = d3.select("#methods-securevsnonsecure-norm")
             .append("svg")
             .attr("width", width + margin.left + margin.right + 100)  // Añadir espacio adicional para la barra de densidad
             .attr("height", height + margin.top + margin.bottom)  // Altura total
@@ -140,9 +140,22 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
             // .attr("height", HEIGHT)   
        
 
+            // const x = d3.scaleLinear()
+            //     .domain([0, d3.max(data, d => d.totalmethod_secure)])
+            //     .range([0, width]);
+
+
+                        // Crear la escala de 'x' para normalizar entre 0 y 1 con respecto a 'totalmethod_secure'
+          // Normalizar el valor de totalmethod_secure en el rango de 0 a 1
             const x = d3.scaleLinear()
-                .domain([0, d3.max(data, d => d.totalmethod_secure)])
-                .range([0, width]);
+            .domain([0, d3.max(data, d => d.totalmethod_secure)])  // Dominio original de totalmethod_secure
+            .range([0, 1]);  // El rango se ajusta para que esté entre 0 y 1 (proporción)
+
+
+            // Si necesitas usar el rango [0, width] para la visualización de los puntos, puedes usar la escala:
+            const xScale = d3.scaleLinear()
+            .domain([0, d3.max(data, d => d.totalmethod_secure)])  // El dominio sigue siendo el mismo
+            .range([0, width]);  // Esto escala el valor normalizado al tamaño real del gráfico
 
             const y = d3.scaleLinear()
                 .domain([0, d3.max(data, d => d.totalmethods)])
@@ -254,7 +267,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
 
             .enter().append("circle")
             .attr("class", "dot")
-            .attr("cx", d => x(d.totalmethod_secure))
+            .attr("cx", d => x(d.totalmethod_secure) * width)  // Multiplicar por el ancho total para convertir a porcentaje
             .attr("cy", d => y(d.totalmethods))
             .attr("r", 2)
             .style("fill", d => colorScale(d.totalmethod_secure))  // Colorear según la densidad
