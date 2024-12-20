@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 4px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    pointer-events: none;
+    font-size: 12px;
+} 
+
 
 body {
   font-family: "Bitstream Vera Serif Bold", serif;
@@ -90,7 +101,7 @@ p.sidebartitle{
 }
 
 header, footer {
-  background-color: rgb(224, 180, 99);
+  background-color: rgba(153, 151, 147, 0.651);
   color: purple;
   padding: 20px;
   text-align: center;
@@ -104,7 +115,7 @@ p.footertext{
 }
 
 footer {
-  background-color: #e6bd80;
+  background-color: #52514f;
   margin-top: auto;
 }
 

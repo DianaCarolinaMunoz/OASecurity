@@ -709,7 +709,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
             .attr("x", WIDTH_ALL / 2)
             .attr("y", HEIGHT_ALL - 510)
             .attr("text-anchor", "middle")
-            .attr("font-size", "20px")
+            .attr("font-size", "18px")
             .attr("font-family", "Times New Roman")
             .text("Yearly Distribution");
 
@@ -721,7 +721,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
             .attr("transform", "rotate(-90)")
             .attr("font-size", "20px")
             .attr("font-family", "Times New Roman")
-            .text("Number of Commits with OAS");
+            .text("Number of Commits");
 
         const legend = svg.append("g")
             .attr("transform", `translate(${WIDTH_ALL - 230}, -1)`);

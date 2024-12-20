@@ -1,7 +1,7 @@
 
 
-const MARGIN_APISL = { LEFT: 20, RIGHT: 10, TOP: 20, BOTTOM: 50 };
-const WIDTH_APISL = 700 - MARGIN_APISL.LEFT - MARGIN_APISL.RIGHT;
+const MARGIN_APISL = { LEFT: 20, RIGHT: 20, TOP: 20, BOTTOM: 100 };
+const WIDTH_APISL = 800 - MARGIN_APISL.LEFT - MARGIN_APISL.RIGHT;
 const HEIGHT_APISL = 400 - MARGIN_APISL.TOP - MARGIN_APISL.BOTTOM;
 
 
@@ -230,6 +230,17 @@ let groupIndex = 1;
         .style("font-size", "10px")
         .style("fill", "black");
 
+
+    svg.append("text")
+        .attr("class", "y-axis-label")
+        .attr("x", -HEIGHT_APISL / 2)
+        .attr("y", -10)
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .attr("font-size", "13px")
+        .attr("font-family", "Times New Roman")
+        .text("Normalized Total Commit Stacked"); 
+
     
 
       
@@ -263,23 +274,21 @@ let groupIndex = 1;
             .attr("stroke-width", 0.5);
 
 
-    // svg.append("line")
-    //         .attr("x1", WIDTH_APISL - MARGIN_APISL.RIGHT - MARGIN_APISL.LEFT)
-    //         .attr("y1", 0)
-    //         .attr("x2", 0)
-    //         .attr("y2", 0)
-    //         .attr("stroke", "black")
-    //         .attr("stroke-width", 1);        
-
-   
+    svg.append("line")
+            .attr("x1", innerWidth_APISL + MARGIN_APISL.LEFT)
+            .attr("y1", MARGIN_APISL.TOP)
+            .attr("x2", innerWidth_APISL + MARGIN_APISL.LEFT)
+            .attr("y2", innerHeight_APISL )
+            .attr("stroke", "black")
+            .attr("stroke-width", 0.5);
 
     svg.append("line")
             .attr("x1", innerWidth_APISL + MARGIN_APISL.LEFT)
             .attr("y1", MARGIN_APISL.TOP)
             .attr("x2", innerWidth_APISL + MARGIN_APISL.LEFT)
-            .attr("y2", innerHeight_APISL - 200)
+            .attr("y2", innerHeight_APISL + 50)
             .attr("stroke", "black")
-            .attr("stroke-width", 0.5);
+            .attr("stroke-width", 1.0);        
 
 
 

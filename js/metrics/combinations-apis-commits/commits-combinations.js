@@ -1,4 +1,4 @@
-const MARGIN_COM = { LEFT: 100, RIGHT: 10, TOP: 20, BOTTOM: 30 };
+const MARGIN_COM = { LEFT: 100, RIGHT: 10, TOP: 20, BOTTOM: 50 };
 const WIDTH_COM = 450 - MARGIN_COM.LEFT - MARGIN_COM.RIGHT;
 const HEIGHT_COM = 250 - MARGIN_COM.TOP - MARGIN_COM.BOTTOM;
 const innerWidth_COM = WIDTH_COM - MARGIN_COM.LEFT - MARGIN_COM.RIGHT;
@@ -88,6 +88,26 @@ svg.append("g")
 svg.selectAll(".grid text")
     .style("font-size", "18px")
     .attr("font-family", "Times New Roman");
+
+svg.append("text")
+    .attr("class", "x-axis-label")
+    .attr("x", WIDTH_COM / 2)
+    .attr("y", HEIGHT_COM +33)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "13px")
+    .attr("font-family", "Times New Roman")
+    .text("Granularity Level Combination");    
+
+
+svg.append("text")
+    .attr("class", "y-axis-label")
+    .attr("x", -HEIGHT_COM / 2)
+    .attr("y", -75)
+    .attr("text-anchor", "middle")
+    .attr("transform", "rotate(-90)")
+    .attr("font-size", "13px")
+    .attr("font-family", "Times New Roman")
+    .text("Number of Commits");    
 
 
 svg.selectAll(".label")

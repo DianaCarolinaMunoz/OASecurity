@@ -1,6 +1,6 @@
 const MARGIN_MCP = { LEFT: 100, RIGHT: 50, TOP: 20, BOTTOM: 70 };
-const WIDTH_MCP= 850 - MARGIN_MCP.LEFT - MARGIN_MCP.RIGHT;
-const HEIGHT_MCP= 350 - MARGIN_MCP.TOP - MARGIN_MCP.BOTTOM;
+const WIDTH_MCP= 770 - MARGIN_MCP.LEFT - MARGIN_MCP.RIGHT;
+const HEIGHT_MCP= 300 - MARGIN_MCP.TOP - MARGIN_MCP.BOTTOM;
 const innerWidth_MCP= WIDTH_MCP- MARGIN_MCP.LEFT - MARGIN_MCP.RIGHT;
 const innerHeight_MCP= HEIGHT_MCP- MARGIN_MCP.BOTTOM;
 
@@ -537,10 +537,14 @@ percentageData.forEach(d => {
             .text("Porcentaje (%)");
         
         svg.append("text")
-            .attr("x", innerWidth_MCP / 2 + MARGIN_MCP.LEFT)
-            .attr("y", innerHeight_MCP + MARGIN_MCP.BOTTOM - 10)
-            .style("text-anchor", "middle")
-            .text("Métodos (GET, POST, PUT, DELETE)");
+            .attr("class", "y-axis-label")
+            .attr("x", -HEIGHT_MCP / 2)
+            .attr("y", 40)
+            .attr("text-anchor", "middle")
+            .attr("transform", "rotate(-90)")
+            .attr("font-size", "18px")
+            .attr("font-family", "Times New Roman")
+            .text("Proportion");
         
             
 

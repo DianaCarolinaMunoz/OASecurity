@@ -96,6 +96,25 @@ svg.selectAll(".grid text")
     .style("font-size", "18px")
     .attr("font-family", "Times New Roman");
 
+svg.append("text")
+    .attr("class", "x-axis-label")
+    .attr("x", WIDTH_APIU / 2)
+    .attr("y", HEIGHT_APIU +34)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "13px")
+    .attr("font-family", "Times New Roman")
+    .text("Granularity Level Combination");        
+
+svg.append("text")
+    .attr("class", "y-axis-label")
+    .attr("x", -HEIGHT_APIU / 2)
+    .attr("y", -75)
+    .attr("text-anchor", "middle")
+    .attr("transform", "rotate(-90)")
+    .attr("font-size", "13px")
+    .attr("font-family", "Times New Roman")
+    .text("Number of APIs");        
+
 // Añadir las etiquetas con las cantidades
 svg.selectAll(".label")
     .data(summedData)  // Usar los datos agregados

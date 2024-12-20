@@ -1,6 +1,6 @@
 const MARGIN_MC = { LEFT: 100, RIGHT: 50, TOP: 20, BOTTOM: 70 };
-const WIDTH_MC= 850 - MARGIN_MC.LEFT - MARGIN_MC.RIGHT;
-const HEIGHT_MC= 700 - MARGIN_MC.TOP - MARGIN_MC.BOTTOM;
+const WIDTH_MC= 750 - MARGIN_MC.LEFT - MARGIN_MC.RIGHT;
+const HEIGHT_MC= 600 - MARGIN_MC.TOP - MARGIN_MC.BOTTOM;
 const innerWidth_MC= WIDTH_MC- MARGIN_MC.LEFT - MARGIN_MC.RIGHT;
 const innerHeight_MC= HEIGHT_MC- MARGIN_MC.BOTTOM;
 
@@ -218,28 +218,28 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
         };
 
 //               // Encuentra el valor máximo para GET
-// const maxGETValue = d3.max(groupedDataArray, d =>
-//     d3.sum(metrics.GET, metric => d[metric.key] || 0)
-// );
+const maxGETValue = d3.max(groupedDataArray, d =>
+    d3.sum(metrics.GET, metric => d[metric.key] || 0)
+);
 
-// // Encuentra el valor máximo para POST
-// const maxPATCHValue = d3.max(groupedDataArray, d =>
-//     d3.sum(metrics.PATCH, metric => d[metric.key] || 0)
-// );
+// Encuentra el valor máximo para POST
+const maxPATCHValue = d3.max(groupedDataArray, d =>
+    d3.sum(metrics.PATCH, metric => d[metric.key] || 0)
+);
 
-// // Define un factor de expansión para el valor máximo de POST
-// const postExpansionFactor = 13.5; // Puedes ajustar este valor para mayor o menor expansión
+// Define un factor de expansión para el valor máximo de POST
+const postExpansionFactor = 13.5; // Puedes ajustar este valor para mayor o menor expansión
 
-// // Determina el valor máximo para el eje Y, con más expansión para POST
-// const maxYValue = Math.max(maxGETValue, maxPATCHValue * postExpansionFactor);
+// Determina el valor máximo para el eje Y, con más expansión para POST
+const maxYValue = Math.max(maxGETValue, maxPATCHValue * postExpansionFactor);
 
 
 
 // Encuentra el primer valor de Y (ajusta según la clave que necesites)
-const firstYValue = d3.sum(metrics.POST, metric => groupedDataArray[0][metric.key] || 0);
+// const firstYValue = d3.sum(metrics.POST, metric => groupedDataArray[0][metric.key] || 0);
 
-const yExpansionFactor = 1.36; // Ajusta este valor para más o menos expansión
-const maxYValue = firstYValue * yExpansionFactor;
+// const yExpansionFactor = 1.36; 
+// const maxYValue = firstYValue * yExpansionFactor;
 
 
         
@@ -304,6 +304,18 @@ const yAxis = d3.axisLeft(y);
 svg.append("g")
    .attr("transform", `translate(${MARGIN_MC.LEFT},0)`)
    .call(yAxis);
+
+
+
+svg.append("text")
+   .attr("class", "y-axis-label")
+   .attr("x", -HEIGHT_MC / 2)
+   .attr("y", 40)
+   .attr("text-anchor", "middle")
+   .attr("transform", "rotate(-90)")
+   .attr("font-size", "18px")
+   .attr("font-family", "Times New Roman")
+   .text("Number of Methods");
 
             
 

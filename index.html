@@ -37,15 +37,15 @@
                     <div class="row">
                         
                         <div class="col-sm-6 col-md-12" id="commits-combination"> 
-                            <h3 class="text-muted"style="font-size: 20px;">Commits Combinations</h3>
+                            <h3 class="text-muted"style="font-size: 20px;">Granularity Level Combination in Commits</h3>
                         </div> 
                       
                         <div class="col-sm-6 col-md-12" id="apis-combination"> 
-                            <h3 class="text-muted"style="font-size: 20px;">APIs Combinations</h3>
+                            <h3 class="text-muted"style="font-size: 20px;">Granularity Level Combination in APIs</h3>
                         </div>
 
                         <div class="col-sm-6 col-md-12" id="date-commits-classification" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" >Commits Classification </h3>
+                            <h3 class="text-muted" style="font-size: 20px;" >Granularity Levels in Commits Over Time</h3>
                         </div>
 
                         <div class="col-sm-6 col-md-12" id="date-commits-classification-per" style="text-align: left; padding-left: 10px;"> 
@@ -67,16 +67,18 @@
 
                 <div id="right-charts" class="col-md-4 col-sm-12">
                     <div class="row">
-                        <div class="col-sm-6 col-md-12" id="commits-apis-secure" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" >Commits vs APIs </h3>
-                        </div>    
+                          
                              
                         <div class="col-sm-6 col-md-12" id="commits-apis-norm" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" ></h3>
-                        </div>     
+                            <h3 class="text-muted" style="font-size: 20px;" >APIs Transitioning at least four different Granularity Levels </h3>
+                        </div>    
+                        
+                        <div class="col-sm-6 col-md-12" id="commits-apis-secure" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" >Commits Staked vs APIs </h3>
+                        </div>  
 
                         <div class="col-sm-6 col-md-12" id="methods-cuantity" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" ></h3>
+                            <h3 class="text-muted" style="font-size: 20px;" > Granularity Levels by HTTP Methods</h3>
                         </div>  
 
                         <div class="col-sm-6 col-md-12" id="methods-cuantity-per" style="text-align: left; padding-left: 10px;"> 
@@ -84,8 +86,13 @@
                         </div>  
 
                         <div class="col-sm-6 col-md-12" id="paths-securevsnonsecure" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" >Paths Distribution</h3>
+                            <h3 class="text-muted" style="font-size: 20px;" >Number of Secured Paths</h3>
                         </div>  
+                        
+                        <div class="col-sm-6 col-md-12" id="methods-securevsnonsecure" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" >Number of Secured Operations</h3>
+                        </div>
+
                         
 
                        
@@ -134,13 +141,14 @@
     <script src="js/metrics/http-methods/methods-cuantity-per.js"></script> 
 
     <script src="js/metrics/paths/paths-securevstotal.js"></script> 
+    <script src="js/metrics/paths/methods-securevstotal.js"></script> 
 
 </section>
 
 
     <footer>
         <p class="footertext">
-            <br><a href="munozc@usi.ch" style="color: red;">ICSA 2025</a></br>
+            <br><a href="munozc@usi.ch" style="color: white;">ICSA 2025</a></br>
         </p>
     </footer>
 

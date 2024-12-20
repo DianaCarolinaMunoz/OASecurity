@@ -1,7 +1,7 @@
 
 
-const MARGIN_APISL = { LEFT: 20, RIGHT: 10, TOP: 20, BOTTOM: 50 };
-const WIDTH_APISL = 700 - MARGIN_APISL.LEFT - MARGIN_APISL.RIGHT;
+const MARGIN_APISL = { LEFT: 20, RIGHT: 20, TOP: 20, BOTTOM: 100 };
+const WIDTH_APISL = 800- MARGIN_APISL.LEFT - MARGIN_APISL.RIGHT;
 const HEIGHT_APISL = 400 - MARGIN_APISL.TOP - MARGIN_APISL.BOTTOM;
 
 
@@ -164,6 +164,16 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
         .attr("transform", "rotate(-90)")
         .style("font-size", "10px");
 
+    svg.append("text")
+        .attr("class", "y-axis-label")
+        .attr("x", -HEIGHT_APISL / 2)
+        .attr("y", -12)
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .attr("font-size", "13px")
+        .attr("font-family", "Times New Roman")
+        .text("Normalized Commit Time");    
+
             
            
         
@@ -182,7 +192,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
         .attr("x2", MARGIN_APISL.LEFT)
         .attr("y2", innerHeight_APISL)
         .attr("stroke", "black")
-        .attr("stroke-width", 0.3);
+        .attr("stroke-width", 1.0);
 
     svg.append("line")
         .attr("x1", MARGIN_APISL.LEFT )
@@ -199,7 +209,7 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
             .attr("x2", innerWidth_APISL + MARGIN_APISL.LEFT)
             .attr("y2", MARGIN_APISL.TOP)
             .attr("stroke", "black")
-            .attr("stroke-width", 0.5);
+            .attr("stroke-width", 1.0);
 
 
     // svg.append("line")
@@ -216,9 +226,9 @@ d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
             .attr("x1", innerWidth_APISL + MARGIN_APISL.LEFT)
             .attr("y1", MARGIN_APISL.TOP)
             .attr("x2", innerWidth_APISL + MARGIN_APISL.LEFT)
-            .attr("y2", innerHeight_APISL - 200)
+            .attr("y2", innerHeight_APISL + 50)
             .attr("stroke", "black")
-            .attr("stroke-width", 0.5);
+            .attr("stroke-width", 1.0);
 
 
 
