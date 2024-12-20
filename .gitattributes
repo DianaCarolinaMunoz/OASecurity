@@ -1,2 +1,1 @@
-data/tablecommits_methodswithglobalsecurity_5.csv filter=lfs diff=lfs merge=lfs -text
 data/tablecommits_methodswithglobalsecurity_5.csv !text !filter !merge !diff
