@@ -1,7 +1,7 @@
 
-const margin = { top: 20, right: 120, bottom: 40, left: 40 };  // márgenes para la gráfica
-const width = 800 - margin.left - margin.right;  // ancho de la gráfica
-const height = 500 - margin.top - margin.bottom;  // alto de la gráfica
+// const margin = { top: 20, right: 120, bottom: 40, left: 40 };  // márgenes para la gráfica
+// const width = 800 - margin.left - margin.right;  // ancho de la gráfica
+// const height = 500 - margin.top - margin.bottom;  // alto de la gráfica
 
 
 
