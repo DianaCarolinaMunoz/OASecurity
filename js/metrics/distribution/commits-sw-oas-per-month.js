@@ -6,7 +6,7 @@
 
 
 
-d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data => {
+d3.csv("data/tablecommits_methodswithglobalsecurity_5.csv").then(data => {
 
     function formatTimeStamp(timeStamp) {
         const date = new Date(timeStamp);
