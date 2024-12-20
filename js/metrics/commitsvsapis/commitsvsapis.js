@@ -10,7 +10,7 @@ const innerWidth_APISL = WIDTH_APISL - MARGIN_APISL.LEFT - MARGIN_APISL.RIGHT;
 const innerHeight_APISL = HEIGHT_APISL - MARGIN_APISL.BOTTOM;
 
 
-d3.csv("data/tablecommits_methodswithglobalsecurity_5.csv").then(data => {
+d3.csv("data/tablecommits_apis_security_oas.csv").then(data => {
 
 
 
