@@ -1,3 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Bitstream Vera Serif Bold", serif;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+header{
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
 #chart-area svg {
   margin-left: auto;
   margin-right: auto;
@@ -53,4 +75,58 @@ stroke-dasharray: 3,3;
 #selections .col-md-4 {
 padding-top: 10px;
 padding-bottom: 10px;
+}
+
+p.sidebartitle{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.left, .sidebar {
+  background-color: rgb(36, 190, 154);
+  padding: 20px;
+}
+
+header, footer {
+  background-color: rgb(224, 180, 99);
+  color: purple;
+  padding: 20px;
+  text-align: center;
+}
+
+p.footertext{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(161, 156, 156);
+}
+
+footer {
+  background-color: #e6bd80;
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .content {
+      flex-direction: row;
+  }
+
+  .left, .sidebar {
+      width: 100px;
+      flex-shrink: 0;
+  }
+
+  main {
+      flex: 1;
+  }
+
+  .container {
+      min-height: 10vh;
+  }
+  
+  .content {
+      flex: 2;
+  }
 }

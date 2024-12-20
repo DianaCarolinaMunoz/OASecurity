@@ -1,43 +1,21 @@
-const MARGIN_ALL = { LEFT: 100, RIGHT: 10, TOP: 20, BOTTOM: 50 };
-const WIDTH_ALL = 750 - MARGIN_ALL.LEFT - MARGIN_ALL.RIGHT;
-const HEIGHT_ALL = 600 - MARGIN_ALL.TOP - MARGIN_ALL.BOTTOM;
-const innerWidth_ALL = WIDTH_ALL - MARGIN_ALL.LEFT - MARGIN_ALL.RIGHT;
-const innerHeight_ALL = HEIGHT_ALL - MARGIN_ALL.BOTTOM;
-
-
+// const MARGIN_ALL = { LEFT: 100, RIGHT: 10, TOP: 20, BOTTOM: 50 };
+// const WIDTH_ALL = 750 - MARGIN_ALL.LEFT - MARGIN_ALL.RIGHT;
+// const HEIGHT_ALL = 600 - MARGIN_ALL.TOP - MARGIN_ALL.BOTTOM;
+// const innerWidth_ALL = WIDTH_ALL - MARGIN_ALL.LEFT - MARGIN_ALL.RIGHT;
+// const innerHeight_ALL = HEIGHT_ALL - MARGIN_ALL.BOTTOM;
 
 
 d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data => {
     
     
-    // function formatTimeStamp(timeStamp) {
-    //     const date = new Date(timeStamp);
-    //     const year = date.getFullYear();
-    //     const month = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1);
-    //     return year + "/" + month;
-    // }
-
-    
-
     function formatTimeStamp(timeStamp) {
         const date = new Date(timeStamp);
-        const year = date.getFullYear().toString();
-        // const month = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1);
-        return year //+ "/" + month;
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1);
+        return year + "/" + month;
     }
 
-    // function formatTimeStamp(timeStamp) {
-    //     const date = new Date(timeStamp);
-    //     const year = date.getFullYear();
-    //     const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Asegura dos dígitos
-    //     const day = date.getDate().toString().padStart(2, '0');         // Asegura dos dígitos
-    //     const hours = date.getHours().toString().padStart(2, '0');      // Hora en formato 24h
-    //     const minutes = date.getMinutes().toString().padStart(2, '0');  // Minutos con dos dígitos
-    //     const seconds = date.getSeconds().toString().padStart(2, '0');  // Segundos con dos dígitos
-    
-    //     // Retorna el timestamp completo formateado
-    //     return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
-    // }
+
     
 
     data.forEach(d => {
@@ -73,26 +51,12 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
     });
 
     
-    // const startDate = "2016/01";
-    // const endDate = "2022/12";
+    const startDate = "2016/01";
+    const endDate = "2022/12";
 
-    const startDate = "2016";
-    const endDate = "2021";
-
-    // Ejemplo de filtro por rango de fechas
-    // const startDate = new Date("2016-01-01T00:00:00").getTime();
-    // const endDate = new Date("2022-12-31T23:59:59").getTime();
-
-    
 
     const filteredData = data.filter(d => d.formattedTimeStamp >= startDate && d.formattedTimeStamp <= endDate);
     console.log(`Número de registros en filteredData: ${filteredData.length}`);
-
-    // Filtra los datos por el rango de fechas
-    // const filteredData = data.filter(d => {
-    //     const timeStamp = new Date(d.timeStamp).getTime(); // Convierte el timestamp a milisegundos
-    //     return timeStamp >= startDate && timeStamp <= endDate;
-    // });
 
 
 
@@ -274,7 +238,7 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
 
     function drawConnectedScatterplot(aggregatedData) {
 
-        const svg = d3.select('#date-commits-classification')
+        const svg = d3.select('#date-commits-classification-month')
             .append("svg")
             .attr("width", WIDTH_ALL)
             .attr("height", HEIGHT_ALL);
@@ -297,7 +261,7 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
             .domain([d3.min(aggregatedData, d => new Date(d.formattedTimeStamp)), d3.max(aggregatedData, d => new Date(endDate))])
             
             // .domain([d3.min(aggregatedData, d => new Date(d.formattedTimeStamp)), new Date(endDate)]) // Ajustar el dominio con el año final
-            .range([MARGIN_ALL.LEFT, innerWidth_ALL + MARGIN_ALL.LEFT-90]);
+            .range([MARGIN_ALL.LEFT, innerWidth_ALL + MARGIN_ALL.LEFT-10]);
 
         // const y = d3.scaleLinear()
         //     .domain([0, d3.max(aggregatedData, d => Math.max(d.totalFilteredPathsSum, d.unsecureSum))])
@@ -635,15 +599,15 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
      
             
 
-        // const xAxisValues = ["2016/01", "2018/01","2020/01","2022/01"];
-        const xAxisValues = ["2016", "2017", "2018", "2019","2020","2021","2022"];
+        const xAxisValues = ["2016/01", "2018/01","2020/01","2022/01"];
+      
 
         // const xAxisValues = aggregatedData.map(d => new Date(d.formattedTimeStamp)); 
         const selectedXAxisValues = xAxisValues.map(date => new Date(date)); 
         const xAxis = d3.axisBottom(x)
             .tickValues(selectedXAxisValues)
-            // .tickFormat(d3.timeFormat("%Y/%m"))
-            .tickFormat(d3.timeFormat("%Y"))
+            .tickFormat(d3.timeFormat("%Y/%m"))
+           
 
             .tickSize(-HEIGHT_ALL + MARGIN_ALL.TOP + MARGIN_ALL.BOTTOM)
             // .tickSize(-innerHeight_ALL)
@@ -711,7 +675,7 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
             .attr("text-anchor", "middle")
             .attr("font-size", "20px")
             .attr("font-family", "Times New Roman")
-            .text("Yearly Distribution");
+            .text("Monthly Distribution");
 
         svg.append("text")
             .attr("class", "y-axis-label")
@@ -726,9 +690,7 @@ d3.csv("data/tableallapis_githubdb_commitsclasification_sw_oas.csv").then(data =
         const legend = svg.append("g")
             .attr("transform", `translate(${WIDTH_ALL - 230}, -1)`);
 
-            // const color = d3.scaleOrdinal()
-            // .domain(["c_local_nolocal_global","c_local_nolocal","c_local_global","c_local", "c_nolocal_global", "c_nolocal"])
-            // .range(["#F8FF00", "#f8f882", "#A7F355", "lightgreen", "orange", "steelblue"]);
+            
 
     //     legend.append("rect")
     //     .attr("x", -300)

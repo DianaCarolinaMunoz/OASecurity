@@ -14,11 +14,18 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-light"></nav>
-		<div class="container">
-            <h1 class="text-center"> ICSA - OAS Security Analysis</h1>
-		</div>
-	</nav>
+    <header>
+        
+        
+    </header>
+
+    <section class="content">
+
+        <nav class="navbar navbar-light bg-light"></nav>
+            <div class="container">
+                <h1 class="text-center"> 2025 - ICSA - OpenAPI Security Documentation Analysis </h1>
+            </div>
+        </nav>
 	
 		
         <div class="container">
@@ -38,11 +45,41 @@
                         </div>
 
                         <div class="col-sm-6 col-md-12" id="date-commits-classification" style="text-align: left; padding-left: 10px;"> 
-                            <h3 class="text-muted" style="font-size: 20px;" >Commits Classification APIs</h3>
+                            <h3 class="text-muted" style="font-size: 20px;" >Commits Classification </h3>
                         </div>
+
+                        <div class="col-sm-6 col-md-12" id="date-commits-classification-per" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" ></h3>
+                        </div>
+
+                        <div class="col-sm-6 col-md-12" id="date-commits-classification-month" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" ></h3>
+                        </div>
+
+                        <div class="col-sm-6 col-md-12" id="date-commits-classification-per-month" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" > </h3>
+                        </div>
+                 
+                        
                           
                     </div>
                 </div>
+
+                <div id="right-charts" class="col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-12" id="commits-apis-secure" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" >Commits vs APIs </h3>
+                        </div>    
+                             
+                        <div class="col-sm-6 col-md-12" id="commits-apis-norm" style="text-align: left; padding-left: 10px;"> 
+                            <h3 class="text-muted" style="font-size: 20px;" ></h3>
+                        </div>      
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
         
@@ -68,7 +105,22 @@
     <script src="js/metrics/combinations-apis-commits/commits-combinations.js"></script>   
 
     <script src="js/metrics/distribution/commits-sw-oas-apis.js"></script>
+    <script src="js/metrics/distribution/commits-sw-oas-per.js"></script>
 
+    <script src="js/metrics/distribution/commits-sw-oas-apis-month.js"></script>
+    <script src="js/metrics/distribution/commits-sw-oas-per-month.js"></script>
+
+
+    <script type="module" src="js/metrics/commitsvsapis/commitsvsapis.js"></script>
+    <script type="module" src="js/metrics/commitsvsapis/timeStampnorm.js"></script>
+</section>
+
+
+    <footer>
+        <p class="footertext">
+            <br><a href="munozc@usi.ch" style="color: red;">ICSA 2025</a></br>
+        </p>
+    </footer>
 
 
 
