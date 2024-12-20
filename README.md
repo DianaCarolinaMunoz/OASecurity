@@ -26,10 +26,4 @@ To check if you have **npm** installed, open your terminal or command prompt and
 ```bash
 npm --version 
 
-Once npm is installed, you can install the necessary packages globally for the project.
-
-Open your terminal or command prompt.
-Run the following command to install the `http-server` package globally:
-
-```bash
 npm install -g http-server
