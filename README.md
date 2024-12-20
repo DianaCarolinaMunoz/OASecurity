@@ -24,4 +24,6 @@ To run this project, you need to have **npm** (Node Package Manager) installed. 
 To check if you have **npm** installed, open your terminal or command prompt and run the following command:
 
 ```bash
-npm --version
+npm --version ```
+
+npm install -g http-server
