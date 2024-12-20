@@ -28,9 +28,11 @@ npm --version
 ``` 
 
 If npm is not installed, you can follow the steps below to install it.
-Installing npm
 
-You can download and install npm from the Node.js official website. The installation of npm is bundled with Node.js, so when you install Node.js, npm will be installed automatically.
+
+### Installing npm
+You can download and install npm from the [Node.js official website](https://nodejs.org/). The installation of npm is bundled with Node.js, so installing Node.js will also install npm.
+
 
 1.Go to Node.js download page.
 2.Download the recommended version for your operating system.
